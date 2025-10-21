@@ -6,7 +6,7 @@ A comprehensive AI-powered recommendation system that analyzes user reading patt
 
 ## 🖼️ Demo Interface
 
-![AI Recommendation System Demo](overall_website.png)
+![AI Recommendation System Demo](img/overall_website.png)
 
 The demo interface showcases:
 - **User Reading History Analysis**: View detailed interaction patterns (liked, bookmarked, disliked articles)
@@ -28,7 +28,7 @@ The demo interface showcases:
 
 1. **Clone the repository**
    ```bash
-   git clone <your-repo-url>
+   git clone https://github.com/ht-N/azure-recommendation-system.git
    cd azure-recommendation-system
    ```
 
