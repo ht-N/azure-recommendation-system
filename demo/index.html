@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Recommendation System Demo</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <h1><i class="fas fa-brain"></i> AI Recommendation Engine</h1>
+                <p>Intelligent content recommendations powered by Azure AI</p>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- User Input Section -->
+            <section class="input-section">
+                <div class="card">
+                    <h2><i class="fas fa-user"></i> User Recommendation</h2>
+                    <div class="input-group">
+                        <label for="userId">User ID:</label>
+                        <input type="text" id="userId" placeholder="Enter user ID (e.g., user123)" value="user123">
+                    </div>
+                    <div class="button-group">
+                        <button id="generateBtn" class="btn btn-primary">
+                            <i class="fas fa-magic"></i> Generate Recommendations
+                        </button>
+                        <button id="benchmarkBtn" class="btn btn-secondary">
+                            <i class="fas fa-chart-line"></i> Benchmark Performance
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+
+            <!-- Loading Section -->
+            <section id="loadingSection" class="loading-section hidden">
+                <div class="loading-card">
+                    <div class="spinner"></div>
+                    <p>Generating recommendations...</p>
+                    <div class="loading-steps">
+                        <div class="step active">Fetching user data</div>
+                        <div class="step">Analyzing preferences</div>
+                        <div class="step">Generating recommendations</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Results Section -->
+            <section id="resultsSection" class="results-section hidden">
+                <!-- Performance Metrics -->
+                <div id="performanceMetrics" class="metrics-card hidden">
+                    <h3><i class="fas fa-tachometer-alt"></i> Performance Metrics</h3>
+                    <div class="metrics-grid">
+                        <div class="metric">
+                            <span class="metric-label">Total Time</span>
+                            <span id="totalTime" class="metric-value">-</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-label">Articles Fetch Time</span>
+                            <span id="articlesTime" class="metric-value">-</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-label">Articles Count</span>
+                            <span id="articlesCount" class="metric-value">-</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-label">Cache Hit Rate</span>
+                            <span id="cacheHitRate" class="metric-value">-</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Two Column Layout -->
+                <div class="results-two-column">
+                    <!-- Left Column: User Articles -->
+                    <div class="column-left">
+                        <div class="card">
+                            <h3><i class="fas fa-book-open"></i> User's Reading History</h3>
+                            <div id="userInteractionSummary" class="interaction-summary">
+                                <!-- User interaction summary will be populated here -->
+                            </div>
+                            <div id="userArticlesList" class="user-articles-list">
+                                <!-- User articles will be populated here -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Tag Recommendations -->
+                    <div class="column-right">
+                        <div class="card">
+                            <h3><i class="fas fa-tags"></i> Tag Recommendations</h3>
+                            <div id="tagRecommendations" class="recommendations-grid">
+                                <!-- Tags will be populated here -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Article Recommendations (Full Width Below) -->
+                <div class="card">
+                    <h3><i class="fas fa-newspaper"></i> Article Recommendations</h3>
+                    <div id="articleRecommendations" class="recommendations-list">
+                        <!-- Articles will be populated here -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Recent Recommendations Section -->
+            <section id="recentSection" class="recent-section hidden">
+                <div class="recent-card">
+                    <i class="fas fa-clock"></i>
+                    <h3>Recent Recommendations</h3>
+                    <p id="recentMessage"></p>
+                </div>
+            </section>
+
+            <!-- Error Section -->
+            <section id="errorSection" class="error-section hidden">
+                <div class="error-card">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <h3>Error</h3>
+                    <p id="errorMessage"></p>
+                </div>
+            </section>
+
+            <!-- Features Section -->
+            <section class="features-section">
+                <h2><i class="fas fa-star"></i> Key Features</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <i class="fas fa-rocket"></i>
+                        <h4>High Performance</h4>
+                        <p>Optimized batch queries and caching for fast recommendations</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-brain"></i>
+                        <h4>AI-Powered</h4>
+                        <p>Uses Azure OpenAI for intelligent content analysis and recommendations</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-database"></i>
+                        <h4>Scalable</h4>
+                        <p>Built on Azure Cosmos DB for enterprise-scale data handling</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-chart-line"></i>
+                        <h4>Real-time</h4>
+                        <p>Live performance monitoring and cache optimization</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>&copy; 2024 AI Recommendation System Demo</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

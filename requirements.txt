@@ -1,0 +1,11 @@
+azure-cosmos==4.5.1
+python-dotenv==1.0.0
+requests==2.31.0
+azure-core==1.30.2
+azure-identity==1.15.0
+azure-search-documents==11.5.3
+fastapi==0.104.1
+uvicorn==0.24.0
+numpy==1.24.3
+asyncio
+aiohttp
